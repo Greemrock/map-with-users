@@ -1,5 +1,5 @@
 {
-  "homepage": "http://Greemrock.github.io/pam-with-users",
+  "homepage": "http://Greemrock.github.io/map-with-users",
   "name": "map-with-users",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +11,9 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
+    "axios": "^1.3.4",
     "react": "^18.2.0",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
