@@ -1,3 +1,4 @@
+import { getImage } from "./getImage";
 import { getUsers } from "./getUsers";
 import { login } from "./login";
 
@@ -6,4 +7,5 @@ export const originUrl = `${process.env.REACT_APP_API_SERVER}:${process.env.REAC
 export const api = {
   login,
   getUsers,
+  getImage,
 };
