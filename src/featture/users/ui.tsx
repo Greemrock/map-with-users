@@ -22,8 +22,6 @@ export const Users: React.FC = () => {
   const getUsers = async (page: number = 1) => {
     setLoading(true);
     try {
-      console.log("updatePage", page);
-
       const getUsersRes = await api.getUsers(cookie.token, page, postsPerPage);
       const { people, num_pages } = getUsersRes.data.data;
 

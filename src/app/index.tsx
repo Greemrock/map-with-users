@@ -6,7 +6,6 @@ import "./styles/index.scss";
 
 function App() {
   const [cookie, setCookie] = useCookies(["token"]);
-  console.log(",.,.,");
 
   useEffect(() => {
     const login = async () => {
