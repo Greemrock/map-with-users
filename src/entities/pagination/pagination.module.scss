@@ -31,4 +31,8 @@
 
 .disabled {
   color: #b2b2b2;
+  cursor: default;
+  &:hover {
+    text-decoration: none;
+  }
 }

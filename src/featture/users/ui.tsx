@@ -11,13 +11,11 @@ export const Users: React.FC = () => {
   const [users, setUsers] = useState<Array<UserType>>([]);
   const [loading, setLoading] = useState(false);
   const [totalPages, setTotalPages] = useState(1);
-  const [numElems, setNumElems] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(3);
 
   const getImage = async (url: string) => {
     const picture = await api.getImage(cookie.token, url);
-
     return URL.createObjectURL(picture.data);
   };
 
@@ -27,7 +25,7 @@ export const Users: React.FC = () => {
       console.log("updatePage", page);
 
       const getUsersRes = await api.getUsers(cookie.token, page, postsPerPage);
-      const { people, num_pages, num_elems } = getUsersRes.data.data;
+      const { people, num_pages } = getUsersRes.data.data;
 
       const imagesRes = await Promise.all([
         getImage(people[0].image_ref),
@@ -47,7 +45,6 @@ export const Users: React.FC = () => {
 
       setUsers(data);
       setTotalPages(num_pages);
-      setNumElems(num_elems);
     } catch (error) {
       console.log(error);
     } finally {
@@ -57,7 +54,6 @@ export const Users: React.FC = () => {
 
   const handlePages = (updatePage: number) => {
     setCurrentPage(updatePage);
-
     getUsers(updatePage);
   };
 
@@ -88,6 +84,7 @@ export const Users: React.FC = () => {
           </div>
         )}
       </div>
+
       <Paginate
         page={currentPage}
         totalPages={totalPages}
